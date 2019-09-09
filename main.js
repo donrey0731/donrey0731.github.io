@@ -1,27 +1,31 @@
-var myImage = document.querySelector('img');
 
-myImage.onclick = function(){
-    var mySrc = myImage.getAttribute('src');
-    if(mySrc === 'images/project1.png') {
-        myImage.setAttribute('src','images/project2.png');
+let myImage = document.querySelector('img');
+
+myImage.onclick = function() {
+    let mySrc = myImage.getAttribute('src');
+    if(mySrc === 'images/voo1.jpg') {
+      myImage.setAttribute ('src','images/soul.jpg');
     } else {
-        myImage.setAttribute('src','images/project1.png');
+      myImage.setAttribute ('src','images/voo1.jpg');
     }
 }
-var myButton = document.querySelector('button');
-var myHeading = document.querySelector('h1');
 
-function setUsername() {
-   var myName = prompt('please enter your name');
-    localStorage.setItem('name', myName);
-    myHeading.textContent = 'JB is cool, '+ myName;
-}
-if(!localStorage.getItem('name')) {
-    setUsername();
-}else {
-    var storedName = localStorage.getItem('name');
-    myHeading.textContent = 'JB is cool,'+ storedName;
-}
+let myButton = document.querySelector('button');
+let myHeading = document.querySelector('h1');
+
 myButton.onclick = function() {
-    setUsername();
+  setUserName();
+}
+
+function setUserName() {
+  let myName = prompt('Please enter your name.');
+  localStorage.setItem('name', myName);
+  myHeading.textContent = 'Are you ready for some fun, ' + myName;
+}
+
+if(!localStorage.getItem('name')) {
+  setUserName();
+} else {
+  let storedName = localStorage.getItem('name');
+  myHeading.textContent = 'Are you ready for some fun, ' + storedName;
 }
